@@ -1,28 +1,136 @@
 {
-  "employees": [
+  "users": [
     {
-      "id": 1,
-      "first_name": "Sebastian",
-      "last_name": "Eschweiler",
-      "email": "sebastian@codingthesmartway.com"
+      "email": "satyajit@cefalo.com",
+      "password": "123",
+      "confirm": "123",
+      "name": "Satyajit Dey",
+      "registeredAt": "2019-10-03T09:48:37.740Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "first_name": "Steve",
-      "last_name": "Palmer",
-      "email": "steve@codingthesmartway.com"
-    },
-    {
-      "id": 3,
-      "first_name": "Ann",
-      "last_name": "Smith",
-      "email": "ann@codingthesmartway.com"
-    },
-    {
-      "first_name": "Satyajit",
-      "last_name": "Dey",
-      "email": "satyajit@dey.com",
-      "id": 4
+      "email": "arnab@cefalo.com",
+      "password": "1234",
+      "confirm": "1234",
+      "name": "Arnab Das",
+      "registeredAt": "2019-10-03T09:49:05.784Z",
+      "id": 2
     }
-  ]
+  ],
+  "questions": [
+    {
+      "title": "Why is my callback not working correctly?",
+      "body": "<p>The problem is that if originally <code>mongoURI: 127.0.0.1:27017</code>, and if I do <code>__init__(false)</code>, Node will try to connect to <code>127.0.0.1:27017</code>, when it should be connecting to <code>+srv</code> uri.</p>\n<p>If I run <code>__init__(false)</code> AGAIN, then it will connect to appropriate link.</p>\n<p>Likewise, if I then run <code>__init__(true)</code>, it will connect to <code>srv+</code> when it should be connecting to local, and if I run <code>__init__(true)</code> again, only then it will connect to local.</p>\n<p>What am I doing wrong here? I'm using the callback as Im supposed to, no?</p>",
+      "tags": [
+        "javascript",
+        "nodejs"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:01:18.167Z",
+      "id": 1
+    },
+    {
+      "title": "How to read xsi:type with java annotations",
+      "body": "<p><code>&lt;?xml version=</code><code>\"1.0\"</code><code> encoding=</code><code>\"utf-8\"</code><code> standalone=</code><code>\"yes\"</code><code>?&gt;</code> <code>&lt;children</code> <code>xmlns:xsi</code><code>=</code><code>\"http://www.w3.org/2001/XMLSchema-instance\"</code><code>&gt;</code> <code>&lt;child</code> <code>xsi:type</code><code>=</code><code>\"girl\"</code><code>&gt;</code> <code>&lt;age&gt;</code><code>12</code><code>&lt;/age&gt;</code> <code>&lt;isdancing&gt;</code><code>true</code><code>&lt;/isdancing&gt;</code> <code>&lt;/child&gt;</code> <code>&lt;child</code> <code>xsi:type</code><code>=</code><code>\"boy\"</code><code>&gt;</code> <code>&lt;age&gt;</code><code>10</code><code>&lt;/age&gt;</code> <code>&lt;issoccerplayer&gt;</code><code>true</code><code>&lt;/issoccerplayer&gt;</code> <code>&lt;/child&gt;</code> <code>&lt;/children&gt;</code></p>",
+      "tags": [
+        "java",
+        "xml"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:02:28.792Z",
+      "id": 2
+    },
+    {
+      "title": "Processing stream from a topic into the same topic (circular processing)",
+      "body": "<p>I'm having problems processing a stream from a topic into the same topic (called 'restaurant').</p>\n<p>All seems to be working fine if I produce to a different topic. But if I produce to 'restaurant' topic the events do not seem to be registered. Also I can peek the stream and in all cases I can see the correct events in the stream.</p>\n<p>The restaurant stream has events (orders). The processor enriches them and sends them back to restaurant under the name 'enrichedOrder'.</p>",
+      "tags": [
+        "java",
+        "stream"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:03:14.684Z",
+      "id": 3
+    },
+    {
+      "title": "I can't change java memory for Jenkins",
+      "body": "<p>Here is what I did:</p>\n<ol>\n  <li>I went this way: <code>/etc/default/</code></li>\n  <li>Then: <code>vim jenkins</code></li>\n  <li><br></li>\n</ol>\n<p>Then edit: <code>JAVA_ARGS=\"-Xmx1048m\"</code></p>\n<p><br></p>\n<figure><img src=\"https://i.stack.imgur.com/lGJBj.jpg\" alt=\"enter image description here\" height=\"\" width=\"\"/></figure>\n<ol>\n  <li><br></li>\n</ol>\n<p>I exit from editor with saving: <code>:wq</code></p>\n<ol>\n  <li><br></li>\n</ol>\n<p>Now I make do: <code>service jenkins restart</code></p>\n<ol>\n  <li><br></li>\n</ol>\n<p>Now I go to my <em>Jenkins</em> and watching monitoring with plugin <em>JavaMelody</em>.</p>\n<ol>\n  <li><br></li>\n</ol>\n<p>So, I see that no changes have occurred.</p>",
+      "tags": [
+        "java",
+        "stream"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:03:56.191Z",
+      "id": 4,
+      "answers": [
+        {
+          "userId": 1,
+          "answer": "<p>From the <a href=\"https://support.cloudbees.com/hc/en-us/articles/209715698-How-to-add-Java-arguments-to-Jenkins-\" title=\"official guide\">official guide</a>, if you're using RedHat Linux based distributions, you should use <code>JENKINS_JAVA_OPTIONS</code>.</p>\n<p><code>JENKINS_JAVA_OPTIONS=\"-Xmx1048m\"<br>\n</code></p>\n<p>Note: For me, the file location was <code>/etc/sysconfig/jenkins</code> and it only had <code>JENKINS_ARGS=\"\"</code>. Assigning <code>Xmx</code> value to it did not work. You should leave that entry as is and instead, add the <code>JENKINS_JAVA_OPTIONS</code> entry in the file just like i specified above.</p>",
+          "answerDate": "2019-10-03T10:09:39.449Z",
+          "vote": 1
+        }
+      ]
+    },
+    {
+      "title": "DayJS isValid behaves differently to Moment",
+      "body": "<p>I was trying to validate birthday using <code>dayjs</code> but its <code>isValid</code> is returning <code>true</code> for a date that doesn't exist. Funnily enough, the <code>isValid</code> by <code>moment</code> is working just fine.</p>\n<p><code>dayjs(</code><code>'2019/02/31'</code><code>,</code> <code>'YYYY/MM/DD'</code><code>).isValid()</code> <code>// true</code><code><br>\nmoment(</code><code>'2019/02/31'</code><code>,</code> <code>'YYYY/MM/DD'</code><code>).isValid()</code> <code>// false</code></p>\n<p>I can't switch to <code>moment</code> because of the lightweightness of <code>dayjs</code></p>\n<p>Any idea how to tackle this?</p>",
+      "tags": [
+        "java",
+        "stream"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:04:45.400Z",
+      "id": 5
+    },
+    {
+      "title": "How do I add a button to a SharePoint Modal using JavaScript?",
+      "body": "<p>I have a modal to display, it displays fine. I'm trying to add a button to the modal, the button should fire the acceptTerms() function, storing the cookie and then closing the modal.</p>\n<p>I'm struggling to get a button on the modal. It adds the HTML, I can see it in the source, it's just not appearing.</p>\n<p>I've tried something like this in the WebPart:</p>\n<p><code>var</code><code> acceptBtn =</code> <code>'&lt;input type=\"button\" style=\"width:75px;\" value=\"I Accept\" onclick=\"acceptTerms()\"&gt;'</code><code>;<br>\n$(</code><code>'body'</code><code>).append(acceptBtn);</code></p>\n<p>Here's the WebPart JS:</p>\n<p><code>&lt;script</code> <code>language</code><code>=</code><code>\"javascript\"</code> <code>type</code><code>=</code><code>\"text/javascript\"</code> <code>src</code><code>=</code><code>\"//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js\"</code><code>&gt;&lt;/script&gt;</code> <code>&lt;script</code> <code>language</code><code>=</code><code>\"javascript\"</code> <code>type</code><code>=</code><code>\"text/javascript\"</code><code>&gt;</code><code> &nbsp;<br>\n &nbsp;&nbsp;&nbsp;$(document).ready(function() { &nbsp;<br>\n &nbsp;&nbsp;&nbsp;SP.SOD.executeFunc('sp.js', 'SP.ClientContext', showModalPopUp); &nbsp;<br>\n}); &nbsp;<br>\n<br>\nvar agreed = document.cookie.replace(/(?:(?:^|.*;\\s*)Acknowledged\\s*\\=\\s*([^;]*).*$)|^.*$/, \"$1\");<br>\nif(!agreed) {<br>\n &nbsp;&nbsp;&nbsp;function showModalPopUp() { &nbsp;<br>\n &nbsp;&nbsp;&nbsp;//Set options for Modal PopUp &nbsp;<br>\n &nbsp;&nbsp;&nbsp;var options = { &nbsp;<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url: '/path/to/my/terms/page.aspx', //Set the url of the page &nbsp;<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title: 'Terms', //Set the title for the pop up &nbsp;<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allowMaximize: false, &nbsp;<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autosize: true,<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;showClose: true, &nbsp;<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 600, &nbsp;<br>\n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: 400, <br>\n &nbsp;&nbsp;&nbsp;}; &nbsp;<br>\n &nbsp;&nbsp;&nbsp;//Invoke the modal dialog by passing in the options array variable &nbsp;<br>\n &nbsp;&nbsp;&nbsp;SP.SOD.execute('sp.ui.dialog.js', 'SP.UI.ModalDialog.showModalDialog', options); &nbsp;<br>\n &nbsp;&nbsp;&nbsp;return false; &nbsp;<br>\n &nbsp;&nbsp;&nbsp;}<br>\n}<br>\n<br>\nfunction acceptTerms() {<br>\n &nbsp;&nbsp;&nbsp;var d = new Date();<br>\n &nbsp;&nbsp;&nbsp;var expire = new Date(d);<br>\n &nbsp;&nbsp;&nbsp;expire.setDate(d.getDate() + 365);<br>\n &nbsp;&nbsp;&nbsp;document.cookie = \"Acknowledged=true; Path=/; Expires=\"+expire;<br>\n &nbsp;&nbsp;&nbsp;SP.UI.ModalDialog.commonModalDialogClose(SP.UI.DialogResult.Yes);<br>\n} &nbsp;</code></p>",
+      "tags": [
+        "javascript"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:05:29.549Z",
+      "id": 6
+    },
+    {
+      "title": "How do I correctly reference an EJS function defined in another EJS file?",
+      "body": "<p><strong>file 1: ejsfunction.ejs</strong></p>\n<p><code>&lt;%</code> <code>function</code><code> funcTest()</code> <code>{</code><code>return</code> <code>42</code><code>;}</code> <code>%&gt;</code></p>\n<p><strong>file 2: file.ejs</strong></p>\n<p><code>&lt;% include ejsfunction.ejs %&gt;&lt;% funcTest();</code> <code>%&gt;</code></p>\n<p><strong>output:</strong></p>\n<p><code>ReferenceError</code><code>:</code> <code>1</code><code>|</code> <code>&lt;% include ejsfunction.ejs %&gt;</code> <code>&gt;&gt;</code> <code>2</code><code>|</code> <code>&lt;% funcTest();</code> <code>%&gt;<br>\nfuncTest is not defined</code></p>\n<p>Hi, I am working on a node.js/express project and trying to refactor some functions out of an ejs file into a second file, and then use the include directive to load them back in. Unfortunately, I am doing something wrong as I keep getting a ReferenceError with the code above.</p>\n<p><strong>Can anybody tell me what I am doing wrong, please?</strong></p>\n<p>Many thanks in advance! Dan.</p>",
+      "tags": [
+        "javascript"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:06:02.941Z",
+      "id": 7
+    },
+    {
+      "title": "VBA macro not sorting all values",
+      "body": "<p>The data in the table is dynamically inserted from an SQL query before it is sorted. I have left that code out. When I use <em>stopwatch</em> and manually go through each line it sorts correctly which makes me think it has something do with the timer. I tried <code>Application.Wait (Now + TimeValue(\"0:00:02\"))</code> and <code>DoEvents</code>, but neither solved the problem.</p>",
+      "tags": [
+        "javascript"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:06:32.200Z",
+      "id": 8
+    },
+    {
+      "title": "Visual Studio Code - How to prevent comment folding",
+      "body": "<p>I love folding my code in visual studio code, but I wish I could still see my comment blocks with multiple lines. I use them for my functions and classes. Is there a way to achive this?</p>\n<p>For example I have this piece of code:</p>\n<p>&nbsp;<code>/**<br>\n &nbsp;&nbsp;&nbsp;* setMinimize() - Minimize my window<br>\n &nbsp;&nbsp;&nbsp;*/</code><code><br>\n &nbsp;&nbsp;&nbsp;setMinimize()</code> <code>{</code> <code>this</code><code>.win.minimize()</code> <code>}</code></p>\n<p>Now I use folding and the following happens:</p>\n<p>&nbsp;<code>/**...<br>\n &nbsp;&nbsp;&nbsp;setMinimize() {...<br>\n &nbsp;&nbsp;&nbsp;}</code></p>\n<p>Actually, I'd like to achieve this (so I can still see my comment block):</p>\n<p>&nbsp;<code>/**<br>\n &nbsp;&nbsp;&nbsp;* setMinimize() - Minimize my window<br>\n &nbsp;&nbsp;&nbsp;*/</code><code><br>\n &nbsp;&nbsp;&nbsp;setMinimize()</code> <code>{...</code> <code>}</code></p>\n<p>Edit: I forgot to say that I use the option 'fold all', or 'fold level 2'.</p>",
+      "tags": [
+        "javascript"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:07:17.004Z",
+      "id": 9
+    },
+    {
+      "title": "Flyway Migrations in Docker + Modular Spring Boot",
+      "body": "<p>I have added flyway migrations in Spring boot modular application. It runs fine when ran with mvn directly but doesn't seem to work on docker.</p>\n<p>As per the articles and blogs that I read, adding flyway location in properties should help but it is not that straight forward in my case.</p>\n<p>I have multiple modules in single Java 11 Spring Boot Modular project and each module has its own schema and migration file. Application is not able to pick these values from <code>application.properties</code> file so as a work around I have added them to <code>pom.xml</code> of each module and it works using <code>mvn flyway:migrate</code> but not on Application Startup in docker.</p>\n<p>is it possible to achieve this directly using Spring Boot?</p>",
+      "tags": [
+        "javascript"
+      ],
+      "userId": 1,
+      "postDate": "2019-10-03T10:07:47.745Z",
+      "id": 10
+    }
+  ],
+  "tags": []
 }
